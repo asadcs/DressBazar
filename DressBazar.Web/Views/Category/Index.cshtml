@@ -1,0 +1,8 @@
+﻿@model List<DressBazar.Entities.Category>   
+
+@foreach (var category in Model)
+{
+    <ul>
+        <li>@category.Name ( @category.Description)</li>
+    </ul>
+}

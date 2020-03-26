@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DressBazar.Database
 {
-    public class DBazarContext:DbContext
+    public class DBazarContext:DbContext,IDisposable
     {
         public DBazarContext():base("DressBazarConnection")
         { }

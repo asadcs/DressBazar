@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DressBazar.Entities", "Dres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DressBazar.Database", "DressBazar.Database\DressBazar.Database.csproj", "{6ECC3AC0-D733-4F72-8137-C7D8CE9DF97A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DressBazar.Services", "DressBazar.Services\DressBazar.Services.csproj", "{DAEA5446-0044-42E5-B296-70026DD6D565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6ECC3AC0-D733-4F72-8137-C7D8CE9DF97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECC3AC0-D733-4F72-8137-C7D8CE9DF97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECC3AC0-D733-4F72-8137-C7D8CE9DF97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEA5446-0044-42E5-B296-70026DD6D565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEA5446-0044-42E5-B296-70026DD6D565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEA5446-0044-42E5-B296-70026DD6D565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEA5446-0044-42E5-B296-70026DD6D565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
