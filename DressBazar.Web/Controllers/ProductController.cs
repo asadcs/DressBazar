@@ -23,7 +23,7 @@ namespace DressBazar.Web.Controllers
 
             if (!string.IsNullOrEmpty(search))
             {
-                products = products.Where(x => x.Name.Contains(search)).ToList();
+                products = products.Where(x => x.Name!=null&& x.Name.ToLower().Contains(search.ToLower())).ToList();
             }
             return PartialView(products);
         }

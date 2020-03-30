@@ -54,6 +54,14 @@
     <Compile Include="Migrations\202001181404594_initialized.Designer.cs">
       <DependentUpon>202001181404594_initialized.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003271854082_employeeAdded.cs" />
+    <Compile Include="Migrations\202003271854082_employeeAdded.Designer.cs">
+      <DependentUpon>202003271854082_employeeAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003272128575_validationAdded.cs" />
+    <Compile Include="Migrations\202003272128575_validationAdded.Designer.cs">
+      <DependentUpon>202003272128575_validationAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +78,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001181404594_initialized.resx">
       <DependentUpon>202001181404594_initialized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003271854082_employeeAdded.resx">
+      <DependentUpon>202003271854082_employeeAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272128575_validationAdded.resx">
+      <DependentUpon>202003272128575_validationAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
