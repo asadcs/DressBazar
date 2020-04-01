@@ -28,8 +28,8 @@
                 <td>-</td>
                 <td>@item.price</td>
                 <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button class="editBtn" data-id="@item.ID">Edit</button>
+                    <button class="deleteBtn" data-id="@item.ID">Delete</button>
                 </td>
             </tr>
         }
@@ -59,6 +59,69 @@
         }  
     });  
       
+    });
+
+
+    $('#newBtn').click(function () {
+
+       
+        // alert(searchValue);
+        $.ajax({
+            type: "GET",
+            url: "/Product/Create",
+            //data: JSON.stringify(searchValue),
+           // data: { search: searchValue },
+            // dataType: "json"  ,
+            //contentType: 'application/json; charset=utf-8',  
+            success: function (data) {
+                alert(data);
+                $('#newFormData').html(data);
+            },
+            error: function () {
+                alert("Error occured!!")
+            }
+        });
+
+    });
+    $('.editBtn').click(function () {
+
+        //debugger;
+        // alert(searchValue);
+        $.ajax({
+            type: "GET",
+            url: "/Product/Edit",
+            data:{id: $(this).attr("data-id")},            
+            success: function (data) {
+                alert(data);
+                $('#newFormData').html(data);
+            },
+            error: function () {
+                alert("Error occured!!")
+            }
+        });
+
+    });
+    $('.deleteBtn').click(function () {
+        var a = confirm("Are you sure ?");
+        //debugger;
+        // alert(searchValue);
+        if (a)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Product/delete",
+                data: { id: $(this).attr("data-id") },
+                success: function (data) {
+                    alert(data);
+                    $('#asad').html(data);
+                },
+                error: function () {
+                    alert("Error occured!!")
+                }
+            });
+        }
+      
+
     });
 
 </script>

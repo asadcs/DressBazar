@@ -37,5 +37,24 @@ namespace DressBazar.Web.Controllers
             productsService.SaveProducts(product);
             return RedirectToAction("ProductsTable");
         }
+
+        public ActionResult edit(int id )
+        {
+            var product = productsService.GetProductsbyID(id);
+                
+            return PartialView(product);
+        }
+        [HttpPost]
+        public ActionResult edit(Product product)
+        {
+            productsService.UpdateProduct(product);
+            return RedirectToAction("ProductsTable");
+        }
+        [HttpPost]
+        public ActionResult delete(int id)
+        {
+            productsService.DeleteProduct(id);
+            return RedirectToAction("ProductsTable");
+        }
     }
 }

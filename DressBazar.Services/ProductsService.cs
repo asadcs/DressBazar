@@ -16,11 +16,38 @@ namespace DressBazar.Services
                 return context.products.ToList();
             }
         }
+        public Product GetProductsbyID(int ID)
+        {
+            using (var context = new DressBazar.Database.DBazarContext())
+            {
+                return context.products.Find(ID);
+            }
+        }
+        public void UpdateProduct(Product product)
+        {
+            using (var context = new DressBazar.Database.DBazarContext())
+            {
+                 context.Entry(product).State = System.Data.Entity.EntityState.Modified;
+
+               // context.categories.Remove(product);
+                context.SaveChanges();
+            }
+        }
         public void SaveProducts(Product product)
         {
             using (var context = new DressBazar.Database.DBazarContext())
             {
                 context.products.Add(product);
+                context.SaveChanges();
+            }
+        }
+        public void DeleteProduct(int id)
+        {
+            using (var context = new DressBazar.Database.DBazarContext())
+            {
+                // context.Entry(category).State = System.Data.Entity.EntityState.Modified;
+                var product = context.products.Find(id);
+                context.products.Remove(product);
                 context.SaveChanges();
             }
         }

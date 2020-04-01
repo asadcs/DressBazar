@@ -5,7 +5,7 @@
 
 <h2>Create</h2>
 
-<form method="post">
+<form  id="createProduct">
     <label>Name</label>
     <input name="Name" />
     <br />
@@ -17,5 +17,31 @@
     <input name="Price" />
 
     <br />
-    <button type="submit">Submit</button>
+    <button type="button" id="Savebtn">Save</button>
 </form>
+<script>
+    ///  alert('asad');
+    $('#Savebtn').click(function () {
+
+     //   var searchValue = $('#txtsearch').val();
+        // alert(searchValue);
+        $.ajax({
+            type: "POST",
+            url: "/Product/create",
+            //data: JSON.stringify(searchValue),
+            data:$("#createProduct").serialize(),
+            // dataType: "json"  ,
+            //contentType: 'application/json; charset=utf-8',  
+            success: function (data) {
+                alert(data);
+                $('#asad').html(data);
+                $('#newFormData').html("");
+            },
+            error: function () {
+                alert("Error occured!!")
+            }
+        });
+
+    });
+
+</script>

@@ -1,0 +1,48 @@
+﻿@model DressBazar.Entities.Product
+@{
+    ViewBag.Title = "edit";
+}
+
+<h2>edit</h2>
+
+<form id="editProduct">
+    <input name="ID" value="@Model.ID" type="hidden"/>
+    <label>Name</label>
+    <input name="Name" value="@Model.Name"/>
+    <br />
+    <label>Description</label>
+    <input name="description" value="@Model.Description" />
+
+    <br />
+    <label>Price</label>
+    <input name="Price" value="@Model.price"/>
+
+    <br />
+    <button type="button" id="Updatebtn">Update</button>
+</form>
+<script>
+    ///  alert('asad');
+    $('#Updatebtn').click(function () {
+
+       // var searchValue = $('#txtsearch').val();
+        // alert(searchValue);
+        $.ajax({
+            type: "POST",
+            url: "/Product/edit",
+            //data: JSON.stringify(searchValue),
+            data: $("#editProduct").serialize(),
+            // dataType: "json"  ,
+            //contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                alert(data);
+                $('#asad').html(data);
+                $('#newFormData').html("");
+            },
+            error: function () {
+                alert("Error occured!!")
+            }
+        });
+
+    });
+
+</script>
